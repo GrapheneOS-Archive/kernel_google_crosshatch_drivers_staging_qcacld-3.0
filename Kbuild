@@ -39,7 +39,7 @@ endif
 # Make WLAN as open-source driver by default
 WLAN_OPEN_SOURCE := 1
 
-ifeq ($(KERNEL_BUILD), 0)
+ifneq ($(KERNEL_BUILD),)
 	# Disable BUILD_TAG
 	WLAN_DISABLE_BUILD_TAG := y
 	CONFIG_BUILD_TAG := n
